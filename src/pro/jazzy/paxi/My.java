@@ -1,3 +1,4 @@
+
 package pro.jazzy.paxi;
 
 import android.app.Activity;
@@ -7,68 +8,64 @@ import android.util.Log;
 
 public class My extends Activity {
 
-	String TAG = "test";
+    String TAG = "test";
 
-	@Override
-	protected void onResume() {
-		super.onResume();
+    @Override
+    protected void onResume() {
 
-		SharedPreferences preferences = getPreferences(MODE_PRIVATE);
+        super.onResume();
 
-		// nowa droga - mixed
-		Route myRoute = new Route(preferences);
+        SharedPreferences preferences = getPreferences(MODE_PRIVATE);
 
-		// wsiada 1
-		Member driver = new Member("Me da driver");
-		myRoute.memberIn(driver);
+        Route myRoute = new Route(preferences);
 
-		// wsiada 2
-		Member freshman = new Member("Œwie¿ak");
-		myRoute.memberIn(freshman);
+        ModeChange siedem = new ModeChange(Route.MIXED_MODE);
+        myRoute.changeMode(siedem);
 
-		// przeje¿d¿a 550
-		myRoute.addDistance(550);
+        Member driver = new Member("Driver");
+        myRoute.memberIn(driver);
 
-		// wsiada 3
-		Member oldman = new Member("Staruszek");
-		myRoute.memberIn(oldman);
+        Member freshman = new Member("Passenger");
+        myRoute.memberIn(freshman);
 
-		// przeje¿d¿a 3250
-		myRoute.addDistance(3250);
+        myRoute.addDistance(15000);
 
-		// mode change
-		ModeChange zmiana = new ModeChange(Route.HIGHWAY_MODE);
-		myRoute.changeMode(zmiana);
+        Member oldman = new Member("Autostop");
+        myRoute.memberIn(oldman);
 
-		// p³atnosc
-		Payment pajmi = new Payment(45.60f);
-		myRoute.addPayment(pajmi);
+        myRoute.addDistance(5000);
 
-		// przeje¿d¿a 5000
-		myRoute.addDistance(5000);
+        ModeChange szesc = new ModeChange(Route.HIGHWAY_MODE);
+        myRoute.changeMode(szesc);
 
-		// wysiada 2
-		MemberOut freshass = new MemberOut("Œwie¿ak");
-		myRoute.memberOut(freshass);
+        myRoute.addDistance(5000);
 
-		// przeje¿d¿a 2000
-		myRoute.addDistance(2000);
+        Payment pajmi = new Payment(30f);
+        myRoute.addPayment(pajmi);
 
-		// p³atnosc
-		Payment abzd = new Payment(13.00f);
-		myRoute.addPayment(abzd);
+        myRoute.addDistance(10000);
 
-		// przeje¿d¿a 25000
-		myRoute.addDistance(25000);
+        MemberOut freshass = new MemberOut("Passenger");
+        myRoute.memberOut(freshass);
 
-		// wysiada 1
-		MemberOut freshaass = new MemberOut("Me da driver");
-		myRoute.memberOut(freshaass);
+        myRoute.addDistance(5000);
 
-		// wysiada 3
-		MemberOut fresharss = new MemberOut("Staruszek");
-		myRoute.memberOut(fresharss);
+        ModeChange osiem = new ModeChange(Route.CITY_MODE);
+        myRoute.changeMode(osiem);
+        
+        myRoute.addDistance(5000);
 
-	}
+        MemberOut freshaass = new MemberOut("Autostop");
+        myRoute.memberOut(freshaass);
+
+        Payment pajmik = new Payment(3f);
+        myRoute.addPayment(pajmik);
+
+        myRoute.addDistance(5000);
+
+        MemberOut fresharss = new MemberOut("Driver");
+        myRoute.memberOut(fresharss);
+
+    }
 
 }

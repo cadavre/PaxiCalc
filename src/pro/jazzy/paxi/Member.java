@@ -1,51 +1,56 @@
+
 package pro.jazzy.paxi;
 
 public class Member implements RoadEvent {
 
-	int distance;
+    int distance;
 
-	String member;
+    String member;
 
-	String avatarUri;
-	
-	int membersAfterIn = 0;
-	
-	/**
-	 * Members in da car - this member included
-	 */
-	static int membersIn = 0;
+    String avatarUri;
 
-	public Member(String member) {
-		this.member = member;
-		membersIn++;
-		this.membersAfterIn = Member.membersIn - MemberOut.membersOut;
-	}
+    /**
+     * Members in da car - this member included
+     */
+    static int membersIn = 0;
 
-	@Override
-	public int getDistance() {
-		return distance;
-	}
+    public Member(String member) {
 
-	@Override
-	public void setDistance(int distance) {
-		this.distance = distance;
-	}
+        this.member = member;
+        membersIn++;
+    }
 
-	public String getAvatarURI() {
-		return avatarUri;
-	}
+    @Override
+    public int getDistance() {
 
-	public void setAvatarUri(String uri) {
-		this.avatarUri = uri;
-	}
+        return distance;
+    }
 
-	public String getMember() {
-		return member;
-	}
-	
-	@Override
-	public String toString() {
-		return this.member;
-	}
+    @Override
+    public void setDistance(int distance) {
+
+        this.distance = distance;
+    }
+
+    public String getAvatarURI() {
+
+        return avatarUri;
+    }
+
+    public void setAvatarUri(String uri) {
+
+        this.avatarUri = uri;
+    }
+
+    public String getMember() {
+
+        return member;
+    }
+
+    @Override
+    public String toString() {
+
+        return this.member;
+    }
 
 }

@@ -1,27 +1,32 @@
+
 package pro.jazzy.paxi;
 
 public class ModeChange implements RoadEvent {
 
-	int distance;
+    int distance;
 
-	int mode;
+    int mode;
 
-	public ModeChange(int mode) {
-		this.mode = mode;
-	}
+    public ModeChange(int mode) {
 
-	@Override
-	public int getDistance() {
-		return distance;
-	}
+        this.mode = mode;
+    }
 
-	@Override
-	public void setDistance(int distance) {
-		this.distance = distance;
-	}
+    @Override
+    public int getDistance() {
 
-	public int getMode() {
-		return mode;
-	}
+        return distance;
+    }
+
+    @Override
+    public void setDistance(int distance) {
+
+        this.distance = distance;
+    }
+
+    public int getMode() {
+
+        return mode;
+    }
 
 }

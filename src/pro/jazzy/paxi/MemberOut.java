@@ -1,36 +1,38 @@
+
 package pro.jazzy.paxi;
 
 public class MemberOut implements RoadEvent {
 
-	int distance;
+    int distance;
 
-	String member;
+    String member;
 
-	int membersAfterOut = 0;
+    /**
+     * Members kicked off a car - this member included
+     */
+    static int membersOut = 0;
 
-	/**
-	 * Members kicked off a car - this member included
-	 */
-	static int membersOut = 0;
+    public MemberOut(String member) {
 
-	public MemberOut(String member) {
-		this.member = member;
-		membersOut++;
-		this.membersAfterOut = Member.membersIn - MemberOut.membersOut;
-	}
+        this.member = member;
+        membersOut++;
+    }
 
-	@Override
-	public int getDistance() {
-		return distance;
-	}
+    @Override
+    public int getDistance() {
 
-	@Override
-	public void setDistance(int distance) {
-		this.distance = distance;
-	}
+        return distance;
+    }
 
-	public String getMember() {
-		return member;
-	}
+    @Override
+    public void setDistance(int distance) {
+
+        this.distance = distance;
+    }
+
+    public String getMember() {
+
+        return member;
+    }
 
 }

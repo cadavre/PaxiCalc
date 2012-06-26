@@ -1,27 +1,32 @@
+
 package pro.jazzy.paxi;
 
 public class Payment implements RoadEvent {
 
-	int distance;
+    int distance;
 
-	float amount;
+    float amount;
 
-	public Payment(float amount) {
-		this.amount = amount;
-	}
+    public Payment(float amount) {
 
-	@Override
-	public int getDistance() {
-		return distance;
-	}
+        this.amount = amount;
+    }
 
-	@Override
-	public void setDistance(int distance) {
-		this.distance = distance;
-	}
+    @Override
+    public int getDistance() {
 
-	public float getAmount() {
-		return amount;
-	}
+        return distance;
+    }
+
+    @Override
+    public void setDistance(int distance) {
+
+        this.distance = distance;
+    }
+
+    public float getAmount() {
+
+        return amount;
+    }
 
 }

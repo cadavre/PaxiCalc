@@ -1,3 +1,4 @@
+
 package pro.jazzy.paxi;
 
 /**
@@ -7,8 +8,8 @@ package pro.jazzy.paxi;
  */
 public interface RoadEvent {
 
-	public int getDistance();
+    public int getDistance();
 
-	public void setDistance(int distance);
+    public void setDistance(int distance);
 
 }
