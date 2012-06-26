@@ -8,6 +8,8 @@ public class Member implements RoadEvent {
 
 	String avatarUri;
 	
+	int membersAfterIn = 0;
+	
 	/**
 	 * Members in da car - this member included
 	 */
@@ -16,6 +18,7 @@ public class Member implements RoadEvent {
 	public Member(String member) {
 		this.member = member;
 		membersIn++;
+		this.membersAfterIn = Member.membersIn - MemberOut.membersOut;
 	}
 
 	@Override

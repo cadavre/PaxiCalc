@@ -16,6 +16,7 @@ public class MemberOut implements RoadEvent {
 	public MemberOut(String member) {
 		this.member = member;
 		membersOut++;
+		this.membersAfterOut = Member.membersIn - MemberOut.membersOut;
 	}
 
 	@Override
